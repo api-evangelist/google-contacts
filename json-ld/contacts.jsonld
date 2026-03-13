@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gpeople": "https://people.googleapis.com/v1/",
+    "Person": "schema:Person",
+    "ContactGroup": "schema:ItemList",
+    "resourceName": "schema:identifier",
+    "displayName": "schema:name",
+    "givenName": "schema:givenName",
+    "familyName": "schema:familyName",
+    "middleName": "schema:additionalName",
+    "emailAddresses": "schema:email",
+    "phoneNumbers": "schema:telephone",
+    "addresses": "schema:address",
+    "streetAddress": "schema:streetAddress",
+    "city": "schema:addressLocality",
+    "region": "schema:addressRegion",
+    "postalCode": "schema:postalCode",
+    "country": "schema:addressCountry",
+    "organizations": "schema:worksFor",
+    "title": "schema:jobTitle",
+    "department": "schema:department",
+    "birthdays": "schema:birthDate",
+    "photos": "schema:image",
+    "biographies": "schema:description",
+    "urls": {
+      "@id": "schema:url",
+      "@type": "@id"
+    }
+  }
+}

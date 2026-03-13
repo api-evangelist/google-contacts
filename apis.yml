@@ -1,0 +1,42 @@
+name: Google People API (Contacts)
+description: >-
+  The Google People API provides access to information about profiles and
+  contacts. It allows you to list, create, update, delete, and search contacts,
+  as well as manage contact groups. It replaces the legacy Google Contacts API
+  and provides access to user profiles and directory information.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-contacts/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+  - Contacts
+  - People
+  - Google
+  - Address Book
+  - Directory
+  - Profiles
+apis:
+  - name: Google People API v1
+    description: >-
+      The Google People API provides programmatic access to contacts and profile
+      information. Manage contacts, contact groups, and access directory data
+      for Google Workspace users.
+    humanURL: https://developers.google.com/people
+    baseURL: https://people.googleapis.com/v1
+    properties:
+      - type: OpenAPI
+        url: openapi/contacts.yml
+      - type: JSONSchema
+        url: json-schema/contacts.json
+    overlays: []
+common:
+  - type: GettingStarted
+    url: https://developers.google.com/people/v1/getting-started
+  - type: Pricing
+    url: https://developers.google.com/people/v1/how-tos/authorizing
+  - type: JSON-LD
+    url: json-ld/contacts.jsonld
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

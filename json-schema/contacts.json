@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-contacts/refs/heads/main/json-schema/contacts.json",
+  "title": "Google Contact (Person)",
+  "description": "A person resource from the Google People API representing a contact.",
+  "type": "object",
+  "properties": {
+    "resourceName": {
+      "type": "string",
+      "description": "The resource name for the person, assigned by the server."
+    },
+    "etag": {
+      "type": "string",
+      "description": "The HTTP entity tag of the resource."
+    },
+    "names": {
+      "type": "array",
+      "description": "The person's names.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "displayName": {
+            "type": "string",
+            "description": "The display name formatted according to the locale."
+          },
+          "familyName": {
+            "type": "string",
+            "description": "The family name."
+          },
+          "givenName": {
+            "type": "string",
+            "description": "The given name."
+          },
+          "middleName": {
+            "type": "string",
+            "description": "The middle name."
+          }
+        }
+      }
+    },
+    "emailAddresses": {
+      "type": "array",
+      "description": "The person's email addresses.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "email"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "description": "The person's phone numbers.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "addresses": {
+      "type": "array",
+      "description": "The person's street addresses.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "formattedValue": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "streetAddress": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "organizations": {
+      "type": "array",
+      "description": "The person's past or current organizations.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "department": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "birthdays": {
+      "type": "array",
+      "description": "The person's birthdays.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "object",
+            "properties": {
+              "year": { "type": "integer" },
+              "month": { "type": "integer" },
+              "day": { "type": "integer" }
+            }
+          }
+        }
+      }
+    },
+    "photos": {
+      "type": "array",
+      "description": "The person's photos.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "default": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "required": ["resourceName"]
+}

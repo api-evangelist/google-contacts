@@ -1,5 +1,5 @@
 aid: google-contacts
-name: Google People API (Contacts)
+name: Google People API
 description: >-
   The Google People API provides access to information about profiles and
   contacts. It allows you to list, create, update, delete, and search contacts,

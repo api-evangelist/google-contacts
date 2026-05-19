@@ -1,0 +1,549 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google People API (Contacts)
+  description: 'Google People API (Contacts). 11 operations. Lead operation: List contact groups. Self-contained Naftiko capability
+    covering one Google Contacts business surface.'
+  tags:
+  - Google Contacts
+  - Google People API (Contacts)
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CONTACTS_API_KEY: GOOGLE_CONTACTS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: contacts
+    baseUri: https://people.googleapis.com/v1
+    description: Google People API (Contacts) business capability. Self-contained, no shared references.
+    resources:
+    - name: contactGroups
+      path: /contactGroups
+      operations:
+      - name: listcontactgroups
+        method: GET
+        description: List contact groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createcontactgroup
+        method: POST
+        description: Create a contact group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: contactGroups-resourceName
+      path: /contactGroups/{resourceName}
+      operations:
+      - name: getcontactgroup
+        method: GET
+        description: Get a contact group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          required: true
+        - name: maxMembers
+          in: query
+          type: integer
+      - name: updatecontactgroup
+        method: PUT
+        description: Update a contact group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletecontactgroup
+        method: DELETE
+        description: Delete a contact group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          required: true
+        - name: deleteContacts
+          in: query
+          type: boolean
+    - name: people-resourceName
+      path: /people/{resourceName}
+      operations:
+      - name: getperson
+        method: GET
+        description: Get a person
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          description: The resource name of the person to provide information about.
+          required: true
+        - name: personFields
+          in: query
+          type: string
+          description: A field mask to restrict which fields on the person are returned.
+    - name: people-resourceName-connections
+      path: /people/{resourceName}/connections
+      operations:
+      - name: listconnections
+        method: GET
+        description: List contacts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          required: true
+        - name: personFields
+          in: query
+          type: string
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: sortOrder
+          in: query
+          type: string
+    - name: people-resourceName}:deleteContact
+      path: /people/{resourceName}:deleteContact
+      operations:
+      - name: deletecontact
+        method: DELETE
+        description: Delete a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          required: true
+    - name: people-resourceName}:updateContact
+      path: /people/{resourceName}:updateContact
+      operations:
+      - name: updatecontact
+        method: PATCH
+        description: Update a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          required: true
+        - name: updatePersonFields
+          in: query
+          type: string
+        - name: personFields
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: people:createContact
+      path: /people:createContact
+      operations:
+      - name: createcontact
+        method: POST
+        description: Create a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: personFields
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: people:searchContacts
+      path: /people:searchContacts
+      operations:
+      - name: searchcontacts
+        method: GET
+        description: Search contacts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: query
+          in: query
+          type: string
+        - name: readMask
+          in: query
+          type: string
+        - name: pageSize
+          in: query
+          type: integer
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CONTACTS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: contacts-rest
+    port: 8080
+    description: REST adapter for Google People API (Contacts). One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/contactgroups
+      name: contactgroups
+      description: REST surface for contactGroups.
+      operations:
+      - method: GET
+        name: listcontactgroups
+        description: List contact groups
+        call: contacts.listcontactgroups
+        with:
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcontactgroup
+        description: Create a contact group
+        call: contacts.createcontactgroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/contactgroups/{resourcename}
+      name: contactgroups-resourcename
+      description: REST surface for contactGroups-resourceName.
+      operations:
+      - method: GET
+        name: getcontactgroup
+        description: Get a contact group
+        call: contacts.getcontactgroup
+        with:
+          resourceName: rest.resourceName
+          maxMembers: rest.maxMembers
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatecontactgroup
+        description: Update a contact group
+        call: contacts.updatecontactgroup
+        with:
+          resourceName: rest.resourceName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletecontactgroup
+        description: Delete a contact group
+        call: contacts.deletecontactgroup
+        with:
+          resourceName: rest.resourceName
+          deleteContacts: rest.deleteContacts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/people/{resourcename}
+      name: people-resourcename
+      description: REST surface for people-resourceName.
+      operations:
+      - method: GET
+        name: getperson
+        description: Get a person
+        call: contacts.getperson
+        with:
+          resourceName: rest.resourceName
+          personFields: rest.personFields
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/people/{resourcename}/connections
+      name: people-resourcename-connections
+      description: REST surface for people-resourceName-connections.
+      operations:
+      - method: GET
+        name: listconnections
+        description: List contacts
+        call: contacts.listconnections
+        with:
+          resourceName: rest.resourceName
+          personFields: rest.personFields
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+          sortOrder: rest.sortOrder
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/people/resourcename-deletecontact
+      name: people-resourcename-deletecontact
+      description: REST surface for people-resourceName}:deleteContact.
+      operations:
+      - method: DELETE
+        name: deletecontact
+        description: Delete a contact
+        call: contacts.deletecontact
+        with:
+          resourceName: rest.resourceName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/people/resourcename-updatecontact
+      name: people-resourcename-updatecontact
+      description: REST surface for people-resourceName}:updateContact.
+      operations:
+      - method: PATCH
+        name: updatecontact
+        description: Update a contact
+        call: contacts.updatecontact
+        with:
+          resourceName: rest.resourceName
+          updatePersonFields: rest.updatePersonFields
+          personFields: rest.personFields
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/people-createcontact
+      name: people-createcontact
+      description: REST surface for people:createContact.
+      operations:
+      - method: POST
+        name: createcontact
+        description: Create a contact
+        call: contacts.createcontact
+        with:
+          personFields: rest.personFields
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/people-searchcontacts
+      name: people-searchcontacts
+      description: REST surface for people:searchContacts.
+      operations:
+      - method: GET
+        name: searchcontacts
+        description: Search contacts
+        call: contacts.searchcontacts
+        with:
+          query: rest.query
+          readMask: rest.readMask
+          pageSize: rest.pageSize
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: contacts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google People API (Contacts). One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-contact-groups
+      description: List contact groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: contacts.listcontactgroups
+      with:
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-contact-group
+      description: Create a contact group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: contacts.createcontactgroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-contact-group
+      description: Get a contact group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: contacts.getcontactgroup
+      with:
+        resourceName: tools.resourceName
+        maxMembers: tools.maxMembers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-contact-group
+      description: Update a contact group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: contacts.updatecontactgroup
+      with:
+        resourceName: tools.resourceName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-contact-group
+      description: Delete a contact group
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: contacts.deletecontactgroup
+      with:
+        resourceName: tools.resourceName
+        deleteContacts: tools.deleteContacts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-person
+      description: Get a person
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: contacts.getperson
+      with:
+        resourceName: tools.resourceName
+        personFields: tools.personFields
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-contacts
+      description: List contacts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: contacts.listconnections
+      with:
+        resourceName: tools.resourceName
+        personFields: tools.personFields
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+        sortOrder: tools.sortOrder
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-contact
+      description: Delete a contact
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: contacts.deletecontact
+      with:
+        resourceName: tools.resourceName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-contact
+      description: Update a contact
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: contacts.updatecontact
+      with:
+        resourceName: tools.resourceName
+        updatePersonFields: tools.updatePersonFields
+        personFields: tools.personFields
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-contact
+      description: Create a contact
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: contacts.createcontact
+      with:
+        personFields: tools.personFields
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: search-contacts
+      description: Search contacts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: contacts.searchcontacts
+      with:
+        query: tools.query
+        readMask: tools.readMask
+        pageSize: tools.pageSize
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -36,6 +36,8 @@ apis:
       - type: JSONSchema
         url: json-schema/contacts.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-contacts-scopes.yml
   - type: Portal
     url: https://developers.google.com/people
   - type: GettingStarted

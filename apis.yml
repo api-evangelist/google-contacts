@@ -36,6 +36,12 @@ apis:
       - type: JSONSchema
         url: json-schema/contacts.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-contacts-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-contacts-domain-security.yml
+  - type: Authentication
+    url: authentication/google-contacts-authentication.yml
   - type: OAuthScopes
     url: scopes/google-contacts-scopes.yml
   - type: Portal

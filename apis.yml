@@ -36,6 +36,8 @@ apis:
       - type: JSONSchema
         url: json-schema/contacts.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-contacts-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-contacts-vulnerability-disclosure.yml
   - type: DomainSecurity

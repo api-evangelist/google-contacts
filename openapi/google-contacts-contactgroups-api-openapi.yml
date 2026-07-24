@@ -1,0 +1,146 @@
+openapi: 3.1.0
+info:
+  title: Google People API (Contacts) ContactGroups API
+  description: The Google People API provides access to information about profiles and contacts. It allows you to list, create, update, delete, and search contacts, as well as manage contact groups. It replaces the legacy Google Contacts API.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/people
+servers:
+- url: https://people.googleapis.com/v1
+security:
+- oauth2: []
+tags:
+- name: ContactGroups
+paths:
+  /contactGroups:
+    get:
+      operationId: listContactGroups
+      summary: List contact groups
+      description: List all contact groups owned by the authenticated user.
+      parameters:
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - ContactGroups
+    post:
+      operationId: createContactGroup
+      summary: Create a contact group
+      description: Create a new contact group.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contactGroup:
+                  $ref: '#/components/schemas/ContactGroup'
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - ContactGroups
+  /contactGroups/{resourceName}:
+    get:
+      operationId: getContactGroup
+      summary: Get a contact group
+      description: Get a specific contact group.
+      parameters:
+      - name: resourceName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: maxMembers
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - ContactGroups
+    put:
+      operationId: updateContactGroup
+      summary: Update a contact group
+      description: Update the name of an existing contact group.
+      parameters:
+      - name: resourceName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contactGroup:
+                  $ref: '#/components/schemas/ContactGroup'
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - ContactGroups
+    delete:
+      operationId: deleteContactGroup
+      summary: Delete a contact group
+      description: Delete an existing contact group.
+      parameters:
+      - name: resourceName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: deleteContacts
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - ContactGroups
+components:
+  schemas:
+    ContactGroup:
+      type: object
+      properties:
+        resourceName:
+          type: string
+        etag:
+          type: string
+        name:
+          type: string
+        formattedName:
+          type: string
+        memberCount:
+          type: integer
+        groupType:
+          type: string
+          enum:
+          - GROUP_TYPE_UNSPECIFIED
+          - USER_CONTACT_GROUP
+          - SYSTEM_CONTACT_GROUP
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/contacts: See, edit, download, and permanently delete your contacts
+            https://www.googleapis.com/auth/contacts.readonly: See and download your contacts
+            https://www.googleapis.com/auth/contacts.other.readonly: See and download contact info automatically saved in your Other contacts
+            https://www.googleapis.com/auth/directory.readonly: See and download your organization's GSuite directory

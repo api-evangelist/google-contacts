@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: Google People API (Contacts) ContactGroups People:searchContacts API
+  description: The Google People API provides access to information about profiles and contacts. It allows you to list, create, update, delete, and search contacts, as well as manage contact groups. It replaces the legacy Google Contacts API.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/people
+servers:
+- url: https://people.googleapis.com/v1
+security:
+- oauth2: []
+tags:
+- name: People:searchContacts
+paths:
+  /people:searchContacts:
+    get:
+      operationId: searchContacts
+      summary: Search contacts
+      description: Provides a list of contacts in the authenticated user's grouped contacts that matches the search query.
+      parameters:
+      - name: query
+        in: query
+        schema:
+          type: string
+      - name: readMask
+        in: query
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful response
+      tags:
+      - People:searchContacts
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/contacts: See, edit, download, and permanently delete your contacts
+            https://www.googleapis.com/auth/contacts.readonly: See and download your contacts
+            https://www.googleapis.com/auth/contacts.other.readonly: See and download contact info automatically saved in your Other contacts
+            https://www.googleapis.com/auth/directory.readonly: See and download your organization's GSuite directory

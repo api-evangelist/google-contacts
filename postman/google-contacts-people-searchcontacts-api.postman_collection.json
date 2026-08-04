@@ -1,0 +1,141 @@
+{
+  "info": {
+    "_postman_id": "88156639-29b6-43b0-a7dc-e16d715119ba",
+    "name": "Google People API (Contacts) ContactGroups People:searchContacts API",
+    "description": "The Google People API provides access to information about profiles and contacts. It allows you to list, create, update, delete, and search contacts, as well as manage contact groups. It replaces the legacy Google Contacts API.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:58.000Z",
+    "updatedAt": "2026-07-28T01:48:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-88156639-29b6-43b0-a7dc-e16d715119ba"
+  },
+  "item": [
+    {
+      "name": "people:searchContacts",
+      "item": [
+        {
+          "name": "Search contacts",
+          "id": "c4f2944a-82b2-4f54-bb27-875cd446730e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/people:searchContacts?query=<string>&readMask=<string>&pageSize=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "people:searchContacts"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "key": "readMask",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ]
+            },
+            "description": "Provides a list of contacts in the authenticated user's grouped contacts that matches the search query."
+          },
+          "response": [
+            {
+              "id": "2e7d0854-09f3-4772-929c-54edc0fa1c74",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/people:searchContacts?query=<string>&readMask=<string>&pageSize=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "people:searchContacts"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "readMask",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:48:58.000Z",
+              "updatedAt": "2026-07-28T01:48:58.000Z",
+              "uid": "35240-2e7d0854-09f3-4772-929c-54edc0fa1c74"
+            }
+          ],
+          "createdAt": "2026-07-28T01:48:58.000Z",
+          "updatedAt": "2026-07-28T01:48:58.000Z",
+          "uid": "35240-c4f2944a-82b2-4f54-bb27-875cd446730e"
+        }
+      ],
+      "id": "fbccb782-c02e-469a-9f45-7cc7fcc1eafe",
+      "createdAt": "2026-07-28T01:48:58.000Z",
+      "updatedAt": "2026-07-28T01:48:58.000Z",
+      "uid": "35240-fbccb782-c02e-469a-9f45-7cc7fcc1eafe"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/contacts https://www.googleapis.com/auth/contacts.readonly https://www.googleapis.com/auth/contacts.other.readonly https://www.googleapis.com/auth/directory.readonly",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://people.googleapis.com/v1"
+    }
+  ]
+}

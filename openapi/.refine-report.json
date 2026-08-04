@@ -1,0 +1,20 @@
+{
+  "provider": "google-contacts",
+  "sources": [
+    "google-contacts-contactgroups-api-openapi.yml",
+    "google-contacts-people-api-openapi.yml",
+    "google-contacts-people-createcontact-api-openapi.yml",
+    "google-contacts-people-searchcontacts-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-contacts-contactgroups-api-openapi.yml",
+    "google-contacts-people-api-openapi.yml",
+    "google-contacts-people-createcontact-api-openapi.yml",
+    "google-contacts-people-searchcontacts-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

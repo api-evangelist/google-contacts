@@ -1,0 +1,490 @@
+{
+  "item": [
+    {
+      "id": "8eda1054-4ae3-4b85-a3f8-1b651fc17510",
+      "name": "People",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a8cf3d61-42fe-4b95-b46f-6c025201f3a9",
+          "name": "Get a person",
+          "request": {
+            "name": "Get a person",
+            "description": {
+              "content": "Provides information about a person by specifying a resource name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":resourceName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "personFields",
+                  "value": "<string>",
+                  "description": "A field mask to restrict which fields on the person are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceName",
+                  "description": "(Required) The resource name of the person to provide information about."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54292187-435c-42d7-930e-948e48c11133",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":resourceName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "personFields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceName",
+                      "description": "(Required) The resource name of the person to provide information about."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resourceName\": \"string\",\n  \"etag\": \"string\",\n  \"metadata\": {\n    \"sources\": [\n      {\n        \"type\": \"string\",\n        \"id\": \"string\"\n      },\n      {\n        \"type\": \"string\",\n        \"id\": \"string\"\n      }\n    ]\n  },\n  \"names\": [\n    {\n      \"displayName\": \"string\",\n      \"familyName\": \"string\",\n      \"givenName\": \"string\",\n      \"middleName\": \"string\"\n    },\n    {\n      \"displayName\": \"string\",\n      \"familyName\": \"string\",\n      \"givenName\": \"string\",\n      \"middleName\": \"string\"\n    }\n  ],\n  \"emailAddresses\": [\n    {\n      \"value\": \"9mClv1@NIhXq.zn\",\n      \"type\": \"string\"\n    },\n    {\n      \"value\": \"kId@nbumGVqqGzsRdrJD.nuw\",\n      \"type\": \"string\"\n    }\n  ],\n  \"phoneNumbers\": [\n    {\n      \"value\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"value\": \"string\",\n      \"type\": \"string\"\n    }\n  ],\n  \"addresses\": [\n    {\n      \"formattedValue\": \"string\",\n      \"type\": \"string\",\n      \"streetAddress\": \"string\",\n      \"city\": \"string\",\n      \"region\": \"string\",\n      \"postalCode\": \"string\",\n      \"country\": \"string\"\n    },\n    {\n      \"formattedValue\": \"string\",\n      \"type\": \"string\",\n      \"streetAddress\": \"string\",\n      \"city\": \"string\",\n      \"region\": \"string\",\n      \"postalCode\": \"string\",\n      \"country\": \"string\"\n    }\n  ],\n  \"organizations\": [\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"department\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"department\": \"string\"\n    }\n  ],\n  \"birthdays\": [\n    {\n      \"date\": {\n        \"year\": 9514,\n        \"month\": 5243,\n        \"day\": 7761\n      }\n    },\n    {\n      \"date\": {\n        \"year\": 7333,\n        \"month\": 2519,\n        \"day\": 8463\n      }\n    }\n  ],\n  \"photos\": [\n    {\n      \"url\": \"http://kLdfseHiApvOPAJZWVzDUFZKfkL.doamkU.jceJQyjJ0LEKNKPDneKjvKfy7ZnMzVogdyhGOjnzzpiYEpWXQw\",\n      \"default\": true\n    },\n    {\n      \"url\": \"https://vPbktZswRmqyIDDGaNPhjGwgEaWivQDVb.lvjZ2DjgZOoQeptVohvvYvs8Py8LW\",\n      \"default\": false\n    }\n  ],\n  \"biographies\": [\n    {\n      \"value\": \"string\",\n      \"contentType\": \"string\"\n    },\n    {\n      \"value\": \"string\",\n      \"contentType\": \"string\"\n    }\n  ],\n  \"urls\": [\n    {\n      \"value\": \"https://uVXiSjIalSQDWtzARIR.kamlJLndIj4qHQMeVVaKNuGcZ5ZFqtEPbjf4PhQ6sioS\",\n      \"type\": \"string\"\n    },\n    {\n      \"value\": \"https://RboiQ.gkiwybXaC1oGRxchMEVSIsHHyWYCW5x6H1UlV3JcwoJJkY.qa1wDjd\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "164cd772-8b38-4768-ac16-c9376d644de2",
+          "name": "List contacts",
+          "request": {
+            "name": "List contacts",
+            "description": {
+              "content": "Provides a list of the authenticated user's contacts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":resourceName",
+                "connections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "personFields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "people/me",
+                  "key": "resourceName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18ba4aa9-62b1-4b53-8d02-644825fa69f7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":resourceName",
+                    "connections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "personFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "people/me",
+                      "key": "resourceName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"connections\": [\n    {\n      \"resourceName\": \"string\",\n      \"etag\": \"string\",\n      \"metadata\": {\n        \"sources\": [\n          {\n            \"type\": \"string\",\n            \"id\": \"string\"\n          },\n          {\n            \"type\": \"string\",\n            \"id\": \"string\"\n          }\n        ]\n      },\n      \"names\": [\n        {\n          \"displayName\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\",\n          \"middleName\": \"string\"\n        },\n        {\n          \"displayName\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\",\n          \"middleName\": \"string\"\n        }\n      ],\n      \"emailAddresses\": [\n        {\n          \"value\": \"74m42UH1ORoHO@SWluBFgdFUymsnLTaY.id\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": \"MPxJHhAjcHnd@qxVFUrvlcgp.wxz\",\n          \"type\": \"string\"\n        }\n      ],\n      \"phoneNumbers\": [\n        {\n          \"value\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"addresses\": [\n        {\n          \"formattedValue\": \"string\",\n          \"type\": \"string\",\n          \"streetAddress\": \"string\",\n          \"city\": \"string\",\n          \"region\": \"string\",\n          \"postalCode\": \"string\",\n          \"country\": \"string\"\n        },\n        {\n          \"formattedValue\": \"string\",\n          \"type\": \"string\",\n          \"streetAddress\": \"string\",\n          \"city\": \"string\",\n          \"region\": \"string\",\n          \"postalCode\": \"string\",\n          \"country\": \"string\"\n        }\n      ],\n      \"organizations\": [\n        {\n          \"name\": \"string\",\n          \"title\": \"string\",\n          \"department\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"title\": \"string\",\n          \"department\": \"string\"\n        }\n      ],\n      \"birthdays\": [\n        {\n          \"date\": {\n            \"year\": 9820,\n            \"month\": 328,\n            \"day\": 1600\n          }\n        },\n        {\n          \"date\": {\n            \"year\": 7341,\n            \"month\": 3812,\n            \"day\": 5706\n          }\n        }\n      ],\n      \"photos\": [\n        {\n          \"url\": \"http://bcxSloajbdZnuTpjOWjRLeLqbvraHr.naLVB2DLlurC+FaGkrHQxi1zKweahos0GWpFtJjp\",\n          \"default\": false\n        },\n        {\n          \"url\": \"https://rjQhyQx.cqfHJ+t8AsHP+xhRmL-vi\",\n          \"default\": true\n        }\n      ],\n      \"biographies\": [\n        {\n          \"value\": \"string\",\n          \"contentType\": \"string\"\n        },\n        {\n          \"value\": \"string\",\n          \"contentType\": \"string\"\n        }\n      ],\n      \"urls\": [\n        {\n          \"value\": \"https://SOGHiskEzLzrTrTTYemdawnjF.uoib5S9JfdUY2tHn3G8cs48q2C9tiMMlrbWYi5tsQHy1Plr4nxzv\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": \"http://ySehRabRvkmxFXynhivshDatC.mcqdpb8mtK-ShWU,YG+I3MfFTfGp3UMhTcra6bztAxGzu+FtzY\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    {\n      \"resourceName\": \"string\",\n      \"etag\": \"string\",\n      \"metadata\": {\n        \"sources\": [\n          {\n            \"type\": \"string\",\n            \"id\": \"string\"\n          },\n          {\n            \"type\": \"string\",\n            \"id\": \"string\"\n          }\n        ]\n      },\n      \"names\": [\n        {\n          \"displayName\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\",\n          \"middleName\": \"string\"\n        },\n        {\n          \"displayName\": \"string\",\n          \"familyName\": \"string\",\n          \"givenName\": \"string\",\n          \"middleName\": \"string\"\n        }\n      ],\n      \"emailAddresses\": [\n        {\n          \"value\": \"qnDKVthO@TrWNhBANOIEbiflLMYYLr.nkki\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": \"NOM-y0QAz4W1@wHWtNSrptIuZFqCpOcKDcHKqH.zsus\",\n          \"type\": \"string\"\n        }\n      ],\n      \"phoneNumbers\": [\n        {\n          \"value\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"addresses\": [\n        {\n          \"formattedValue\": \"string\",\n          \"type\": \"string\",\n          \"streetAddress\": \"string\",\n          \"city\": \"string\",\n          \"region\": \"string\",\n          \"postalCode\": \"string\",\n          \"country\": \"string\"\n        },\n        {\n          \"formattedValue\": \"string\",\n          \"type\": \"string\",\n          \"streetAddress\": \"string\",\n          \"city\": \"string\",\n          \"region\": \"string\",\n          \"postalCode\": \"string\",\n          \"country\": \"string\"\n        }\n      ],\n      \"organizations\": [\n        {\n          \"name\": \"string\",\n          \"title\": \"string\",\n          \"department\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"title\": \"string\",\n          \"department\": \"string\"\n        }\n      ],\n      \"birthdays\": [\n        {\n          \"date\": {\n            \"year\": 9153,\n            \"month\": 703,\n            \"day\": 4258\n          }\n        },\n        {\n          \"date\": {\n            \"year\": 4509,\n            \"month\": 4783,\n            \"day\": 4465\n          }\n        }\n      ],\n      \"photos\": [\n        {\n          \"url\": \"https://XptVzIP.tlcdPx+fgJCEIJi0DitM5Ez,r6c54Kj5eYMR.dtdtcpofQS\",\n          \"default\": true\n        },\n        {\n          \"url\": \"https://argZ.qnTBisZ\",\n          \"default\": true\n        }\n      ],\n      \"biographies\": [\n        {\n          \"value\": \"string\",\n          \"contentType\": \"string\"\n        },\n        {\n          \"value\": \"string\",\n          \"contentType\": \"string\"\n        }\n      ],\n      \"urls\": [\n        {\n          \"value\": \"https://PAMEyyDlcyavkpJOVwRBxwcI.fphcGO4K53F5Fodo1AQh8uUPHN4PtJk9POVtX3EvrB1rMmGi,soNdSkDOg\",\n          \"type\": \"string\"\n        },\n        {\n          \"value\": \"https://QYOYpXhhTyeqMxCWRLwDqkW.otS7+fqUIEDehQUQ\",\n          \"type\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"string\",\n  \"totalPeople\": 3463,\n  \"totalItems\": 6946\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09f19439-667a-4770-9b31-d3b07219fbb5",
+          "name": "Update a contact",
+          "request": {
+            "name": "Update a contact",
+            "description": {
+              "content": "Update contact data for an existing contact person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                "{{resourceName}}:updateContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "updatePersonFields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "personFields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resourceName\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"metadata\": {\n    \"sources\": [\n      {\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      }\n    ]\n  },\n  \"names\": [\n    {\n      \"displayName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"givenName\": \"<string>\",\n      \"middleName\": \"<string>\"\n    },\n    {\n      \"displayName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"givenName\": \"<string>\",\n      \"middleName\": \"<string>\"\n    }\n  ],\n  \"emailAddresses\": [\n    {\n      \"value\": \"<email>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"value\": \"<email>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"addresses\": [\n    {\n      \"formattedValue\": \"<string>\",\n      \"type\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"formattedValue\": \"<string>\",\n      \"type\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"organizations\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  ],\n  \"birthdays\": [\n    {\n      \"date\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      }\n    },\n    {\n      \"date\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      }\n    }\n  ],\n  \"photos\": [\n    {\n      \"url\": \"<uri>\",\n      \"default\": \"<boolean>\"\n    },\n    {\n      \"url\": \"<uri>\",\n      \"default\": \"<boolean>\"\n    }\n  ],\n  \"biographies\": [\n    {\n      \"value\": \"<string>\",\n      \"contentType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"contentType\": \"<string>\"\n    }\n  ],\n  \"urls\": [\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26c21c82-5f6e-4f43-beea-17686d26d5e4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    "{{resourceName}}:updateContact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "updatePersonFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "personFields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceName\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"metadata\": {\n    \"sources\": [\n      {\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      }\n    ]\n  },\n  \"names\": [\n    {\n      \"displayName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"givenName\": \"<string>\",\n      \"middleName\": \"<string>\"\n    },\n    {\n      \"displayName\": \"<string>\",\n      \"familyName\": \"<string>\",\n      \"givenName\": \"<string>\",\n      \"middleName\": \"<string>\"\n    }\n  ],\n  \"emailAddresses\": [\n    {\n      \"value\": \"<email>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"value\": \"<email>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"addresses\": [\n    {\n      \"formattedValue\": \"<string>\",\n      \"type\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"formattedValue\": \"<string>\",\n      \"type\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"city\": \"<string>\",\n      \"region\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"organizations\": [\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  ],\n  \"birthdays\": [\n    {\n      \"date\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      }\n    },\n    {\n      \"date\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      }\n    }\n  ],\n  \"photos\": [\n    {\n      \"url\": \"<uri>\",\n      \"default\": \"<boolean>\"\n    },\n    {\n      \"url\": \"<uri>\",\n      \"default\": \"<boolean>\"\n    }\n  ],\n  \"biographies\": [\n    {\n      \"value\": \"<string>\",\n      \"contentType\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"contentType\": \"<string>\"\n    }\n  ],\n  \"urls\": [\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"value\": \"<uri>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36d896b9-482f-45bb-a139-796a5fe68314",
+          "name": "Delete a contact",
+          "request": {
+            "name": "Delete a contact",
+            "description": {
+              "content": "Delete a contact person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                "{{resourceName}}:deleteContact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d6e0bb6-de79-4e35-b0c4-7d59ab17360e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    "{{resourceName}}:deleteContact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://people.googleapis.com/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "resourceName"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/contacts https://www.googleapis.com/auth/contacts.readonly https://www.googleapis.com/auth/contacts.other.readonly https://www.googleapis.com/auth/directory.readonly"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "00e36245-0daa-4aa7-bfc5-d0a987f526b8",
+    "name": "Google API (Contacts) ContactGroups People API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google People API provides access to information about profiles and contacts. It allows you to list, create, update, delete, and search contacts, as well as manage contact groups. It replaces the legacy Google Contacts API.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

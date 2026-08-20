@@ -37,6 +37,8 @@ apis:
   humanURL: https://developers.google.com/people
   baseURL: https://people.googleapis.com/v1
   tags:
+  - Contact Groups
+  tags_raw:
   - ContactGroups
   properties:
   - type: OpenAPI

@@ -4,6 +4,18 @@ description: >-
   The Google People API provides access to information about profiles and contacts. It allows you to list, create,
   update, delete, and search contacts, as well as manage contact groups. It replaces the legacy Google Contacts API and
   provides access to user profiles and directory information.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve

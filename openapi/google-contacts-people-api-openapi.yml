@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google API (Contacts) ContactGroups People API
+  title: Google API (Contacts) People API
   description: The Google People API provides access to information about profiles and contacts. It allows you to list, create, update, delete, and search contacts, as well as manage contact groups. It replaces the legacy Google Contacts API.
   version: v1
   contact:

@@ -1,10 +1,7 @@
 {
   "provider": "google-contacts",
   "sources": [
-    "google-contacts-contactgroups-api-openapi.yml",
-    "google-contacts-people-api-openapi.yml",
-    "google-contacts-people-createcontact-api-openapi.yml",
-    "google-contacts-people-searchcontacts-api-openapi.yml"
+    "_original/contacts.yml"
   ],
   "outputs": [
     "google-contacts-contactgroups-api-openapi.yml",
@@ -12,15 +9,36 @@
     "google-contacts-people-createcontact-api-openapi.yml",
     "google-contacts-people-searchcontacts-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 3 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-contacts-contactgroups-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-contacts-people-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-contacts-people-createcontact-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-contacts-people-searchcontacts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "contacts.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "contacts.yml: tagged paths GET /people/{resourceName} -> People",
+    "contacts.yml: tagged paths GET /people/{resourceName}/connections -> People",
+    "contacts.yml: tagged paths POST /people:createContact -> People:createContact",
+    "contacts.yml: tagged paths PATCH /people/{resourceName}:updateContact -> People",
+    "contacts.yml: tagged paths DELETE /people/{resourceName}:deleteContact -> People",
+    "contacts.yml: tagged paths GET /people:searchContacts -> People:searchContacts",
+    "contacts.yml: tagged paths GET /contactGroups -> ContactGroups",
+    "contacts.yml: tagged paths POST /contactGroups -> ContactGroups",
+    "contacts.yml: tagged paths GET /contactGroups/{resourceName} -> ContactGroups",
+    "contacts.yml: tagged paths PUT /contactGroups/{resourceName} -> ContactGroups",
+    "contacts.yml: tagged paths DELETE /contactGroups/{resourceName} -> ContactGroups",
+    "contacts.yml: declared missing tag: ContactGroups",
+    "contacts.yml: declared missing tag: People",
+    "contacts.yml: declared missing tag: People:createContact",
+    "contacts.yml: declared missing tag: People:searchContacts",
+    "superseded outputs removed: google-contacts-contact-groups-api-openapi.yml, google-contacts-people-create-contact-api-openapi.yml, google-contacts-people-search-contacts-api-openapi.yml",
+    "apis.yml register: written (+3 apis, 4 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-contacts-contact-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-contacts-people-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-contacts-people-create-contact-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-contacts-people-search-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

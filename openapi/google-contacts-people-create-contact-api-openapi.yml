@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google People API (Contacts) ContactGroups People:create Contact API
+  title: Google People API (Contacts) People:create Contact API
   description: The Google People API provides access to information about profiles and contacts. It allows you to list, create, update, delete, and search contacts, as well as manage contact groups. It replaces the legacy Google Contacts API.
   version: v1
   contact:
@@ -11,7 +11,7 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: People:createContact
+- name: People:create Contact
 paths:
   /people:createContact:
     post:
@@ -36,7 +36,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Person'
       tags:
-      - People:createContact
+      - People:create Contact
 components:
   schemas:
     Person:

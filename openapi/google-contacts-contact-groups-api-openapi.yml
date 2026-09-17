@@ -11,7 +11,7 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: ContactGroups
+- name: Contact Groups
 paths:
   /contactGroups:
     get:
@@ -31,7 +31,7 @@ paths:
         '200':
           description: Successful response
       tags:
-      - ContactGroups
+      - Contact Groups
     post:
       operationId: createContactGroup
       summary: Create a contact group
@@ -48,7 +48,7 @@ paths:
         '200':
           description: Successful response
       tags:
-      - ContactGroups
+      - Contact Groups
   /contactGroups/{resourceName}:
     get:
       operationId: getContactGroup
@@ -68,7 +68,7 @@ paths:
         '200':
           description: Successful response
       tags:
-      - ContactGroups
+      - Contact Groups
     put:
       operationId: updateContactGroup
       summary: Update a contact group
@@ -91,7 +91,7 @@ paths:
         '200':
           description: Successful response
       tags:
-      - ContactGroups
+      - Contact Groups
     delete:
       operationId: deleteContactGroup
       summary: Delete a contact group
@@ -110,7 +110,7 @@ paths:
         '200':
           description: Successful response
       tags:
-      - ContactGroups
+      - Contact Groups
 components:
   schemas:
     ContactGroup:
